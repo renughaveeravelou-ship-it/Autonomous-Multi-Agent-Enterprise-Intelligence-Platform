@@ -158,7 +158,7 @@ Track:
                   ┌─────────────────────┐
                   │ Knowledge Graph     │
                   └─────────────────────┘
-
+```
 ## Technology Stack
 - Backend
    - Python
@@ -175,19 +175,19 @@ Track:
    - Pandas
    - NumPy
 - Visualization
-    - Plotly
-    - Matplotlib
-    - Seaborn
+   - Plotly
+   - Matplotlib
+   - Seaborn
 - Knowledge Graph
-    - Neo4j
-    - NetworkX
+   - Neo4j
+   - NetworkX
 - Vector Database
-    - ChromaDB
+   - ChromaDB
 - Databases
-    - PostgreSQL
-    - MongoDB
-    - Redis
--Frontend
+   - PostgreSQL
+   - MongoDB
+   - Redis
+- Frontend
    - HTML5
    - CSS3
    - JavaScript
@@ -197,65 +197,244 @@ Track:
    - Docker
    - Kubernetes
    - GitHub Actions
-##Dataset Information
-HR Analytics Dataset
-
-Used For:
-
-Promotion Prediction
-Workforce Analysis
-Talent Management
-
-Sample Features:
-
-Age
-Education
-Department
-Training Score
-Awards Won
-Length of Service
-Customer Support Dataset
-
-Used For:
-
-Sentiment Analysis
-Ticket Classification
-CSAT Prediction
-Escalation Prediction
+ 
+---
+## Dataset Information
+### HR Analytics Dataset
+- Promotion Prediction
+- Workforce Analysis
+- Talent Management
 
 Sample Features:
 
-Ticket ID
-Priority
-Resolution Time
-Channel
-Satisfaction Score
-Financial Dataset
-
-Used For:
-
-Profit Analysis
-Revenue Forecasting
-Risk Assessment
-
-Sample Features:
-
-Revenue
-Expenses
-Profit
-Cash Flow
-Walmart Sales Dataset
-
-Used For:
-
-Sales Forecasting
-Inventory Optimization
-Demand Prediction
+- Age
+- Education
+- Department
+- Training Score
+- Awards Won
+- Length of Service
+  
+---
+##Customer Support Dataset
+- Sentiment Analysis
+- Ticket Classification
+- CSAT Prediction
+- Escalation Prediction
 
 Sample Features:
 
-Weekly Sales
-Store
-Fuel Price
-CPI
-Unemployment Rate
+- Ticket ID-
+- Priority
+- Resolution Time
+- Channel
+- Satisfaction Score
+
+---
+##Financial Dataset
+- Profit Analysis
+- Revenue Forecasting
+- Risk Assessment
+
+Sample Features:
+
+- Revenue
+- Expenses
+- Profit
+- Cash Flow
+
+---
+##Walmart Sales Dataset
+- Sales Forecasting
+- Inventory Optimization
+- Demand Prediction
+
+Sample Features:
+
+- Weekly Sales
+- Store
+- Fuel Price
+- CPI
+- Unemployment Rate
+
+```text
+###Project Structure
+Autonomous-Multi-Agent-Enterprise-Intelligence-Platform
+│
+├── backend/
+│   ├── main.py
+│   ├── agents.py
+│   ├── graph.py
+│   ├── rag.py
+│   ├── simulation.py
+│   ├── monitoring.py
+│   └── models/
+│
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── assets/
+│
+├── datasets/
+│   ├── hr_dataset.csv
+│   ├── customer_support.csv
+│   ├── finance.csv
+│   └── walmart_sales.csv
+│
+├── deployment/
+│   ├── docker/
+│   ├── kubernetes/
+│   └── github-actions/
+│
+├── docs/
+│
+├── requirements.txt
+├── Dockerfile
+├── docker-compose.yml
+├── LICENSE
+├── README.md
+└── .gitignore
+
+```
+
+### Installation
+1.Clone Repository
+
+git clone https://github.com/yourusername/Autonomous-Multi-Agent-Enterprise-Intelligence-Platform.git
+
+cd Autonomous-Multi-Agent-Enterprise-Intelligence-Platform
+
+Create Virtual Environment
+
+python -m venv venv
+
+Windows
+
+venv\Scripts\activate
+
+Linux/Mac
+
+source venv/bin/activate
+
+Install Dependencies
+
+pip install -r requirements.txt
+
+Running the Backend
+
+uvicorn backend.main:app --reload
+
+Backend API:
+
+http://localhost:8000
+
+Swagger Documentation:
+
+http://localhost:8000/docs
+
+Running the Frontend
+
+Navigate to:
+
+frontend/index.html
+
+or
+
+python -m http.server 5500
+
+Open:
+
+http://localhost:5500
+
+Dashboard Walkthrough
+
+Step 1
+
+Open Dashboard
+
+View:
+
+Enterprise Health Score
+KPI Metrics
+Financial Summary
+Workforce Statistics
+Step 2
+
+Use AI Copilot
+
+Example Queries:
+
+Analyze employee promotion trends
+
+Show enterprise risk factors
+
+Forecast next quarter sales
+
+Generate executive summary
+
+Step 3
+
+Use What-If Simulator
+
+Modify:
+
+- Workforce Size
+- Marketing Budget
+- SLA Targets
+- Risk Thresholds
+
+Click:
+
+Run Simulation
+
+Review generated forecasts.
+
+Step 4
+
+Explore Knowledge Graph
+
+Visualize:
+
+- Department Relationships
+- Employee Connections
+- Financial Dependencies
+
+Step 5
+
+Monitor System Telemetry
+
+Track:
+
+- CPU Usage
+- Memory Usage
+- Agent Health
+- Model Drift
+
+## Future Enhancements
+- Generative AI Executive Assistant
+- Autonomous Business Decision Engine
+- Multi-Agent Reinforcement Learning
+- Real-Time Data Streaming
+- Blockchain Audit Trails
+- Federated Learning
+- Explainable AI Dashboard
+- Voice-Based Business Assistant
+
+##Educational Value
+
+This project demonstrates:
+
+- Artificial Intelligence
+- Machine Learning
+- Multi-Agent Systems
+- Knowledge Graphs
+- Retrieval-Augmented Generation
+- Enterprise Analytics
+- Business Intelligence
+- Cloud Deployment
+- MLOps
+- Explainable AI
+
+##License
+
+This project is developed for educational and research purposes.
