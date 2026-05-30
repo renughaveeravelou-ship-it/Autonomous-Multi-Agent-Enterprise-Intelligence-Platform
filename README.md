@@ -435,6 +435,6 @@ This project demonstrates:
 - MLOps
 - Explainable AI
 
-##License
+## License
 
 This project is developed for educational and research purposes.
