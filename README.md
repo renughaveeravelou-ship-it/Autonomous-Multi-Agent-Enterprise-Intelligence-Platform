@@ -420,7 +420,7 @@ Track:
 - Explainable AI Dashboard
 - Voice-Based Business Assistant
 
-##Educational Value
+## Educational Value
 
 This project demonstrates:
 
