@@ -257,7 +257,7 @@ Sample Features:
 - Unemployment Rate
 
 ```text
-###Project Structure
+### Project Structure
 Autonomous-Multi-Agent-Enterprise-Intelligence-Platform
 │
 ├── backend/
