@@ -1,0 +1,28 @@
+class DataPipeline:
+
+    def ingest_customer_support():
+        load_customer_dataset()
+
+    def ingest_finance():
+        load_financial_dataset()
+
+    def ingest_hr():
+        load_hr_dataset()
+
+    def ingest_retail():
+        load_walmart_dataset()
+
+    def clean_data():
+        remove_duplicates()
+        fill_missing_values()
+        normalize_data()
+
+    def feature_engineering():
+        create_lag_features()
+        create_moving_averages()
+        create_sentiment_features()
+        create_hr_features()
+
+    def store():
+        MongoDB.save()
+        PostgreSQL.save()

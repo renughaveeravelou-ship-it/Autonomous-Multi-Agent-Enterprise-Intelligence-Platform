@@ -1,0 +1,7 @@
+health_score =
+
+sales_score * 0.30 +
+finance_score * 0.25 +
+hr_score * 0.20 +
+support_score * 0.15 +
+risk_score * 0.10

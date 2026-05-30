@@ -1,0 +1,38 @@
+# Base Image
+FROM python:3.11-slim
+
+# Working Directory
+WORKDIR /app
+
+# System Dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    build-essential \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy Requirements
+COPY requirements.txt .
+
+# Install Dependencies
+RUN pip install --upgrade pip
+
+RUN pip install -r requirements.txt
+
+# Copy Source Code
+COPY backend/ backend/
+COPY agents/ agents/
+COPY ml-models/ ml-models/
+COPY rag-system/ rag-system/
+COPY knowledge-graph/ knowledge-graph/
+
+# Environment Variables
+ENV PYTHONUNBUFFERED=1
+
+# Expose API Port
+EXPOSE 8000
+
+# Run FastAPI
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]

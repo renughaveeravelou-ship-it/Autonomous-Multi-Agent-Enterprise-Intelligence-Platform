@@ -1,0 +1,7 @@
+question
+
+embed(question)
+
+retrieve_chunks()
+
+LLM.generate_response()

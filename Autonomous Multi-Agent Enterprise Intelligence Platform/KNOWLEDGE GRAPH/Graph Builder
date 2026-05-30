@@ -1,0 +1,13 @@
+class GraphBuilder:
+
+    create_customer_nodes()
+
+    create_employee_nodes()
+
+    create_store_nodes()
+
+    create_product_nodes()
+
+    create_market_nodes()
+
+    create_relationships()

@@ -1,0 +1,15 @@
+documents
+
+clean()
+
+chunk()
+
+embedding()
+
+store_chromadb()
+
+retrieve()
+
+inject_context()
+
+generate_answer()

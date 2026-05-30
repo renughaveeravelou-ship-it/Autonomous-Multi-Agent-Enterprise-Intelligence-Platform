@@ -1,0 +1,18 @@
+recommendations = []
+
+if attrition_high:
+    recommendations.append(
+      "Increase retention programs"
+    )
+
+if demand_high:
+    recommendations.append(
+      "Increase inventory"
+    )
+
+if volatility_high:
+    recommendations.append(
+      "Reduce risky investments"
+    )
+
+return recommendations

@@ -1,0 +1,25 @@
+User Query
+     │
+     ▼
+AI Copilot
+     │
+     ▼
+Intent Detection
+     │
+     ▼
+Agent Router
+     │
+ ┌───┼─────────┬─────────┬─────────┐
+ ▼   ▼         ▼         ▼         ▼
+
+Support  Finance   HR   Retail   Risk
+
+     │
+     ▼
+Recommendation Agent
+     │
+     ▼
+CEO Agent
+     │
+     ▼
+Executive Decision

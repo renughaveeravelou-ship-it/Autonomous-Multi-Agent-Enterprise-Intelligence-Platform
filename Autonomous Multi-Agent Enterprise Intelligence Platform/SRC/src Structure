@@ -1,0 +1,135 @@
+autonomous-enterprise-intelligence/
+
+├── src/
+│
+├── agents/
+│   ├── ceo_agent/
+│   │   ├── executive_agent.py
+│   │   ├── strategic_planner.py
+│   │   └── summary_generator.py
+│   │
+│   ├── customer_support_agent/
+│   │   ├── ticket_classifier.py
+│   │   ├── sentiment_analyzer.py
+│   │   ├── escalation_predictor.py
+│   │   ├── faq_retriever.py
+│   │   └── support_agent.py
+│   │
+│   ├── finance_agent/
+│   │   ├── market_forecaster.py
+│   │   ├── risk_analyzer.py
+│   │   ├── investment_advisor.py
+│   │   └── finance_agent.py
+│   │
+│   ├── hr_agent/
+│   │   ├── promotion_predictor.py
+│   │   ├── attrition_predictor.py
+│   │   ├── skill_gap_analyzer.py
+│   │   └── hr_agent.py
+│   │
+│   ├── retail_agent/
+│   │   ├── sales_forecaster.py
+│   │   ├── demand_forecaster.py
+│   │   ├── inventory_optimizer.py
+│   │   └── retail_agent.py
+│   │
+│   ├── forecast_agent/
+│   ├── recommendation_agent/
+│   ├── risk_agent/
+│   └── knowledge_agent/
+│
+├── api/
+│   ├── routes/
+│   │   ├── support_routes.py
+│   │   ├── finance_routes.py
+│   │   ├── hr_routes.py
+│   │   ├── retail_routes.py
+│   │   ├── simulation_routes.py
+│   │   └── copilot_routes.py
+│   │
+│   └── main.py
+│
+├── ml_models/
+│   ├── customer_support/
+│   ├── finance/
+│   ├── hr/
+│   └── retail/
+│
+├── data_pipeline/
+│   ├── ingestion.py
+│   ├── preprocessing.py
+│   ├── feature_engineering.py
+│   ├── validation.py
+│   └── scheduler.py
+│
+├── rag/
+│   ├── document_loader.py
+│   ├── chunker.py
+│   ├── embeddings.py
+│   ├── retriever.py
+│   ├── vector_store.py
+│   └── rag_pipeline.py
+│
+├── knowledge_graph/
+│   ├── neo4j_connector.py
+│   ├── graph_builder.py
+│   ├── graph_queries.py
+│   └── graph_recommendations.py
+│
+├── simulation/
+│   ├── digital_twin.py
+│   ├── what_if_analysis.py
+│   ├── workforce_simulator.py
+│   ├── sales_simulator.py
+│   └── finance_simulator.py
+│
+├── forecasting/
+│   ├── sales_forecast.py
+│   ├── market_forecast.py
+│   ├── hr_forecast.py
+│   └── support_forecast.py
+│
+├── explainability/
+│   ├── shap_explainer.py
+│   ├── lime_explainer.py
+│   └── reasoning_trace.py
+│
+├── copilot/
+│   ├── query_router.py
+│   ├── intent_classifier.py
+│   ├── agent_selector.py
+│   └── copilot_engine.py
+│
+├── monitoring/
+│   ├── prometheus_metrics.py
+│   ├── drift_detection.py
+│   ├── model_monitor.py
+│   └── agent_monitor.py
+│
+├── notifications/
+│   ├── email_service.py
+│   ├── sms_service.py
+│   └── push_notifications.py
+│
+├── database/
+│   ├── postgres.py
+│   ├── mongodb.py
+│   ├── redis_cache.py
+│   └── chromadb.py
+│
+├── workflows/
+│   ├── langgraph_workflow.py
+│   ├── crewai_workflow.py
+│   └── consensus_engine.py
+│
+├── utils/
+│   ├── logger.py
+│   ├── config.py
+│   ├── constants.py
+│   └── helpers.py
+│
+└── tests/
+    ├── test_agents.py
+    ├── test_models.py
+    ├── test_api.py
+    └── test_rag.py

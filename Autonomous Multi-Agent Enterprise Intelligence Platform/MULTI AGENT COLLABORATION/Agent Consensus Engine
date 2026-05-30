@@ -1,0 +1,13 @@
+votes = []
+
+votes.append(finance_decision)
+
+votes.append(hr_decision)
+
+votes.append(retail_decision)
+
+confidence =
+ average_confidence(votes)
+
+final_decision =
+ consensus(votes)

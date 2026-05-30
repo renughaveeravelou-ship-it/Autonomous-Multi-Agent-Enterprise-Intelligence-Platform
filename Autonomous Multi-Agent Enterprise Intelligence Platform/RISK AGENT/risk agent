@@ -1,0 +1,5 @@
+enterprise_risk =
+ financial_risk +
+ operational_risk +
+ workforce_risk +
+ support_risk

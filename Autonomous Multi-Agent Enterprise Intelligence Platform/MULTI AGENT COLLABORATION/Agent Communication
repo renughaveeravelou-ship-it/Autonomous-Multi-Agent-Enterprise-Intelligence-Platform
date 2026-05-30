@@ -1,0 +1,22 @@
+Retail Agent:
+
+Demand +40%
+
+send_message(HR Agent)
+
+HR Agent:
+
+Need 25 workers
+
+send_message(Finance Agent)
+
+Finance Agent:
+
+Budget Available
+
+send_message(CEO Agent)
+
+CEO Agent:
+
+Approve Hiring
+Increase Inventory

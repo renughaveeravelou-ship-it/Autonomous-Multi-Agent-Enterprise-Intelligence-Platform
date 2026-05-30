@@ -1,0 +1,4 @@
+LightGBM()
+
+promotion_probability =
+ model.predict(employee)

@@ -1,0 +1,28 @@
+name: Enterprise AI Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Build Backend
+        run: docker build -f Dockerfile.backend .
+
+      - name: Build Frontend
+        run: docker build -f Dockerfile.frontend .
+
+      - name: Run Tests
+        run: pytest
+
+      - name: Deploy
+        run: kubectl apply -f deployment/kubernetes/

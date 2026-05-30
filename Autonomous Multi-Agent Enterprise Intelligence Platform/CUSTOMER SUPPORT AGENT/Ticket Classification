@@ -1,0 +1,7 @@
+train_xgboost_ticket_classifier()
+
+input_ticket
+
+category = predict()
+
+return category

@@ -1,0 +1,4 @@
+if MA30 > MA90:
+    Bull Market
+else:
+    Bear Market

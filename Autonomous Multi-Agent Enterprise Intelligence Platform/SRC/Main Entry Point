@@ -1,0 +1,15 @@
+# src/api/main.py
+
+from fastapi import FastAPI
+
+app = FastAPI(
+    title="Autonomous Enterprise Intelligence Platform",
+    version="1.0.0"
+)
+
+@app.get("/")
+def home():
+    return {
+        "status": "running",
+        "system": "Autonomous Multi-Agent Enterprise Intelligence Platform"
+    }

@@ -1,0 +1,9 @@
+(Customer)-[PURCHASED]->(Product)
+
+(Employee)-[WORKS_IN]->(Department)
+
+(Store)-[SELLS]->(Product)
+
+(Product)-[IMPACTS]->(Revenue)
+
+(Market)-[AFFECTS]->(Asset)

@@ -1,0 +1,5 @@
+if risk_low and growth_high:
+    BUY
+
+if risk_high:
+    HOLD

@@ -1,0 +1,4 @@
+risk_score =
+ volatility +
+ drawdown +
+ anomaly_score

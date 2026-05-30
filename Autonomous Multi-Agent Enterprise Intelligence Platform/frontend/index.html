@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Multi-Agent Enterprise Intelligence Platform</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Chart.js for High-Fidelity Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-glow"></div>
+                <i class="fa-solid fa-microchip logo-icon"></i>
+                <h2>Enterprise AI</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-tab="overview">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Overview</span>
+                </a>
+                <a href="#copilot" class="nav-item" data-tab="copilot">
+                    <i class="fa-solid fa-message-bot"></i>
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Copilot</span>
+                </a>
+                <a href="#simulation" class="nav-item" data-tab="simulation">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>What-If Simulator</span>
+                </a>
+                <a href="#graph" class="nav-item" data-tab="graph">
+                    <i class="fa-solid fa-circle-nodes"></i>
+                    <span>Network Graph</span>
+                </a>
+                <a href="#telemetry" class="nav-item" data-tab="telemetry">
+                    <i class="fa-solid fa-server"></i>
+                    <span>Telemetry</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="pulse-dot green"></span>
+                    <span>System: ACTIVE</span>
+                </div>
+                <div class="port-label">PORT: 8000</div>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-content">
+            <!-- Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 id="page-title">Enterprise Overview</h1>
+                    <p id="page-subtitle">Real-time collaborative agent operations</p>
+                </div>
+                <div class="header-right">
+                    <div class="time-widget">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="live-time">12:00:00 PM</span>
+                    </div>
+                    <div class="health-badge-wrapper">
+                        <span class="health-label">Health Score</span>
+                        <div class="health-badge">
+                            <span id="global-health-val">76.5</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Sections -->
+            <div class="section-container">
+                
+                <!-- 1. OVERVIEW SECTION -->
+                <section id="overview-tab" class="tab-content active">
+                    <!-- KPI Cards Grid -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card purple-glow">
+                            <div class="kpi-header">
+                                <span>Weekly Store Sales</span>
+                                <i class="fa-solid fa-store font-purple"></i>
+                            </div>
+                            <div class="kpi-value" id="kpi-sales">$1,046,964</div>
+                            <div class="kpi-subtext"><span class="trend-up"><i class="fa-solid fa-caret-up"></i> +1.4%</span> vs baseline</div>
+                        </div>
+                        
+                        <div class="kpi-card blue-glow">
+                            <div class="kpi-header">
+                                <span>Customer CSAT</span>
+                                <i class="fa-solid fa-face-smile font-blue"></i>
+                            </div>
+                            <div class="kpi-value" id="kpi-csat">4.20 / 5.0</div>
+                            <div class="kpi-subtext"><span class="trend-neutral">Stable</span> response limit</div>
+                        </div>
+                        
+                        <div class="kpi-card red-glow">
+                            <div class="kpi-header">
+                                <span>Staff Attrition Risk</span>
+                                <i class="fa-solid fa-user-minus font-red"></i>
+                            </div>
+                            <div class="kpi-value" id="kpi-attrition">12.0%</div>
+                            <div class="kpi-subtext"><span class="trend-down"><i class="fa-solid fa-caret-down"></i> -0.8%</span> target range</div>
+                        </div>
+                        
+                        <div class="kpi-card green-glow">
+                            <div class="kpi-header">
+                                <span>Net Profit Margin</span>
+                                <i class="fa-solid fa-sack-dollar font-green"></i>
+                            </div>
+                            <div class="kpi-value" id="kpi-margin">15.0%</div>
+                            <div class="kpi-subtext"><span class="trend-up"><i class="fa-solid fa-caret-up"></i> +0.5%</span> optimization</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Grid -->
+                    <div class="dashboard-grid">
+                        <!-- Left Panel: Agent Roster Status -->
+                        <div class="dashboard-panel glass-card active-agents-panel">
+                            <h3><i class="fa-solid fa-users-gear"></i> Multi-Agent Orchestration</h3>
+                            <p class="panel-desc">Current operating states of specialized enterprise AI modules</p>
+                            <div class="agent-list" id="agent-status-list">
+                                <!-- Loaded dynamically via Javascript -->
+                                <div class="loading-spinner"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Panel: Overview Network Preview -->
+                        <div class="dashboard-panel glass-card network-preview-panel">
+                            <div class="panel-header-action">
+                                <h3><i class="fa-solid fa-network-wired"></i> Enterprise Graph Topology</h3>
+                                <button class="btn btn-sm btn-outline" id="btn-preview-toggle">Switch Graph</button>
+                            </div>
+                            <div class="graph-container-wrapper">
+                                <canvas id="preview-graph-canvas"></canvas>
+                                <div class="graph-legend">
+                                    <span class="legend-item"><span class="legend-dot leader"></span>Leader</span>
+                                    <span class="legend-item"><span class="legend-dot agent"></span>Agent</span>
+                                    <span class="legend-item"><span class="legend-dot analyst"></span>Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 2. COPILOT TAB -->
+                <section id="copilot-tab" class="tab-content">
+                    <div class="copilot-workspace">
+                        <!-- Chat Box Panel -->
+                        <div class="chat-panel glass-card">
+                            <div class="chat-messages" id="chat-messages-box">
+                                <div class="message system-msg">
+                                    <div class="msg-avatar"><i class="fa-solid fa-robot"></i></div>
+                                    <div class="msg-content">
+                                        <p>Hello! I am your **Enterprise Copilot**. Ask me to analyze operational logs, HR promotion datasets, sales reports, or risk hedging options.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Prompt Quick Suggestions -->
+                            <div class="prompt-suggestions">
+                                <span class="suggestion-chip">Optimize Walmart retail sales</span>
+                                <span class="suggestion-chip">Predict HR employee attrition risk</span>
+                                <span class="suggestion-chip">Check customer support SLA metrics</span>
+                                <span class="suggestion-chip">Analyze quarterly finance reserves</span>
+                            </div>
+                            
+                            <form class="chat-input-area" id="chat-input-form">
+                                <input type="text" id="chat-input-field" placeholder="Enter query or request..." autocomplete="off">
+                                <button type="submit" class="btn btn-primary" id="btn-send-chat">
+                                    <span>Send</span>
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <!-- Side Diagnostics: Multi-Agent flow and Explainable AI -->
+                        <div class="diagnostics-panel">
+                            <!-- Flow trace -->
+                            <div class="glass-card trace-card">
+                                <h3><i class="fa-solid fa-route"></i> Agent Routing Flow</h3>
+                                <div class="trace-steps-container" id="agent-flow-steps">
+                                    <div class="empty-state">
+                                        <i class="fa-solid fa-network-wired"></i>
+                                        <p>Send a message to visualize agent collaboration flow</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Explainability SHAP/LIME charts -->
+                            <div class="glass-card xai-card">
+                                <h3><i class="fa-solid fa-brain"></i> Explainable AI (LIME / SHAP)</h3>
+                                <p class="panel-desc">Feature weights shaping the latest model prediction</p>
+                                <div class="chart-container" id="xai-chart-wrapper">
+                                    <canvas id="xai-features-chart"></canvas>
+                                    <div class="empty-state" id="xai-empty-state">
+                                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                        <p>Awaiting query metrics mapping</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 3. SIMULATION TAB -->
+                <section id="simulation-tab" class="tab-content">
+                    <div class="simulation-workspace">
+                        <!-- Sliders Panel -->
+                        <div class="glass-card controls-card">
+                            <h3><i class="fa-solid fa-sliders"></i> Scenario Parameter Sliders</h3>
+                            <p class="panel-desc">Tweak inputs to simulate changes across the Enterprise Health network</p>
+                            
+                            <div class="slider-group">
+                                <div class="slider-header">
+                                    <label for="slide-headcount">Staff Headcount Adjustment</label>
+                                    <span class="value-bubble" id="val-headcount">0%</span>
+                                </div>
+                                <input type="range" id="slide-headcount" min="-50" max="50" value="0" step="5">
+                                <div class="slider-limits">
+                                    <span>-50% (Layoff)</span>
+                                    <span>+50% (Hiring)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="slider-group">
+                                <div class="slider-header">
+                                    <label for="slide-marketing">Marketing Budget Expansion</label>
+                                    <span class="value-bubble" id="val-marketing">0%</span>
+                                </div>
+                                <input type="range" id="slide-marketing" min="-50" max="100" value="0" step="5">
+                                <div class="slider-limits">
+                                    <span>-50% (Cut)</span>
+                                    <span>+100% (Double)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="slider-group">
+                                <div class="slider-header">
+                                    <label for="slide-markup">Product Markup Adjustment</label>
+                                    <span class="value-bubble" id="val-markup">0%</span>
+                                </div>
+                                <input type="range" id="slide-markup" min="-20" max="50" value="0" step="2">
+                                <div class="slider-limits">
+                                    <span>-20% (Discount)</span>
+                                    <span>+50% (Premium)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="slider-group">
+                                <div class="slider-header">
+                                    <label for="slide-sla">Support Ticket SLA Target</label>
+                                    <span class="value-bubble" id="val-sla">4 hours</span>
+                                </div>
+                                <input type="range" id="slide-sla" min="1" max="48" value="4" step="1">
+                                <div class="slider-limits">
+                                    <span>1 hour (Ultra)</span>
+                                    <span>48 hours (Delayed)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="select-group">
+                                <label for="select-risk">Risk Hedging Mode</label>
+                                <select id="select-risk">
+                                    <option value="Low">Low Risk Tolerance (Hedging)</option>
+                                    <option value="Medium" selected>Medium (Standard Operation)</option>
+                                    <option value="High">High Risk Tolerance (Aggressive Growth)</option>
+                                </select>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-block" id="btn-run-simulation">
+                                <i class="fa-solid fa-play"></i> Run Simulation
+                            </button>
+                        </div>
+                        
+                        <!-- Outcomes Comparison Panel -->
+                        <div class="glass-card outcomes-card">
+                            <h3><i class="fa-solid fa-chart-simple"></i> Sim-Model Predictions</h3>
+                            
+                            <div class="health-change-header">
+                                <div class="health-stat">
+                                    <span>Baseline Health</span>
+                                    <strong class="font-muted">76.5</strong>
+                                </div>
+                                <div class="health-arrow"><i class="fa-solid fa-arrow-right-long"></i></div>
+                                <div class="health-stat">
+                                    <span>Projected Health</span>
+                                    <strong id="sim-health-val" class="font-purple">76.5</strong>
+                                </div>
+                            </div>
+                            
+                            <div class="comparison-list" id="sim-comparison-rows">
+                                <!-- Load simulation rows dynamically -->
+                                <div class="comparison-row">
+                                    <div class="comp-label">Weekly Store Sales</div>
+                                    <div class="comp-bars">
+                                        <div class="bar before" style="width: 60%">$1.04M</div>
+                                        <div class="bar after" id="sim-bar-sales" style="width: 60%">$1.04M</div>
+                                    </div>
+                                </div>
+                                <div class="comparison-row">
+                                    <div class="comp-label">Customer CSAT</div>
+                                    <div class="comp-bars">
+                                        <div class="bar before" style="width: 84%">4.20 / 5</div>
+                                        <div class="bar after" id="sim-bar-csat" style="width: 84%">4.20 / 5</div>
+                                    </div>
+                                </div>
+                                <div class="comparison-row">
+                                    <div class="comp-label">Attrition Rate</div>
+                                    <div class="comp-bars">
+                                        <div class="bar before" style="width: 30%">12.0%</div>
+                                        <div class="bar after" id="sim-bar-attrition" style="width: 30%">12.0%</div>
+                                    </div>
+                                </div>
+                                <div class="comparison-row">
+                                    <div class="comp-label">Net Profit Margin</div>
+                                    <div class="comp-bars">
+                                        <div class="bar before" style="width: 40%">15.0%</div>
+                                        <div class="bar after" id="sim-bar-margin" style="width: 40%">15.0%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 4. GRAPH TAB -->
+                <section id="graph-tab" class="tab-content">
+                    <div class="graph-workspace glass-card">
+                        <div class="graph-header-bar">
+                            <div class="graph-selection-buttons">
+                                <button class="btn btn-outline active" data-graph="workforce">
+                                    <i class="fa-solid fa-users"></i> Workforce Graph
+                                </button>
+                                <button class="btn btn-outline" data-graph="supply_chain">
+                                    <i class="fa-solid fa-truck-ramp-box"></i> Store Logistics Network
+                                </button>
+                                <button class="btn btn-outline" data-graph="financial">
+                                    <i class="fa-solid fa-arrows-spin"></i> Opex Financial flows
+                                </button>
+                            </div>
+                            <div class="graph-actions">
+                                <button class="btn btn-sm btn-outline" id="btn-graph-reset"><i class="fa-solid fa-rotate-right"></i> Reset View</button>
+                            </div>
+                        </div>
+                        
+                        <div class="main-graph-area">
+                            <canvas id="main-graph-canvas"></canvas>
+                            <div class="graph-tooltip" id="graph-tooltip">Hover nodes for metadata info</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 5. TELEMETRY TAB -->
+                <section id="telemetry-tab" class="tab-content">
+                    <div class="telemetry-workspace">
+                        <!-- Latency line chart -->
+                        <div class="glass-card telemetry-chart-card">
+                            <h3><i class="fa-solid fa-wave-square"></i> Real-time API Latency Metrics</h3>
+                            <div class="latency-chart-wrapper">
+                                <canvas id="latency-line-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- System Metrics & Drift details -->
+                        <div class="telemetry-grid">
+                            <!-- Resources panel -->
+                            <div class="glass-card telemetry-subpanel">
+                                <h3><i class="fa-solid fa-microchip"></i> Node Health Statistics</h3>
+                                <div class="telemetry-stat-row">
+                                    <span>CPU Utilization</span>
+                                    <strong id="stat-cpu">22.4%</strong>
+                                </div>
+                                <div class="telemetry-stat-row">
+                                    <span>Memory Usage</span>
+                                    <strong id="stat-mem">6.8 GB / 16.0 GB</strong>
+                                </div>
+                                <div class="telemetry-stat-row">
+                                    <span>API Latency</span>
+                                    <strong id="stat-latency">15.2 ms</strong>
+                                </div>
+                                <div class="telemetry-stat-row">
+                                    <span>System Uptime</span>
+                                    <strong id="stat-uptime">00:00:00</strong>
+                                </div>
+                            </div>
+                            
+                            <!-- Model stability and drift -->
+                            <div class="glass-card telemetry-subpanel">
+                                <h3><i class="fa-solid fa-triangle-exclamation"></i> Model Drift stability (PSI)</h3>
+                                <p class="panel-desc">Population Stability Index mapping data distribution shift</p>
+                                <div class="drift-list" id="drift-status-rows">
+                                    <!-- Loaded dynamically -->
+                                    <div class="loading-spinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity and alerts logs -->
+                        <div class="glass-card telemetry-logs-card">
+                            <h3><i class="fa-solid fa-list-check"></i> System Alerts & Activity Logs</h3>
+                            <div class="terminal-logs" id="terminal-logs-box">
+                                <!-- Loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+    </div>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>

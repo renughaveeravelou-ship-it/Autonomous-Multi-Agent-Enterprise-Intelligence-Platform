@@ -1,0 +1,4 @@
+if inventory < threshold:
+
+    create_reorder_request()
+    

@@ -1,0 +1,4 @@
+XGBoost()
+
+if probability > 80%:
+      escalate

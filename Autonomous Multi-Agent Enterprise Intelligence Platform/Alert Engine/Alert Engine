@@ -1,0 +1,7 @@
+if risk > 80:
+
+send_email()
+
+send_sms()
+
+send_push()
